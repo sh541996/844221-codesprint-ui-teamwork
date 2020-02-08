@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Page Title</title>
+
+</head>
+
+<body>
+    <form id="myForm">
+        <input type="text" name="name" />name<br>
+        <input type="text" name="address" />address<br>
+        <input type="text" name="city" />city<br>
+
+        <input type="button" value="OK" onclick="myFun()" />
+    </form>
+    <table id="table" border="1" style="border-collapse: collapse;">
+        <tr>
+            <td>name</td>
+            <td>add</td>
+            <td>city</td>
+        </tr>
+
+
+    </table>
+
+    <script>
+        const key = "loKey";
+        if (localStorage.getItem(key)) {
+            var ar = JSON.parse(localStorage.getItem(key));
+        } else {
+            console.log("........... NO localStorage  ..");
+            var ar = [];
+        }
+
+
+        function myFun() {
+            var x = document.getElementById("myForm").elements[0].value;
+            var y = document.getElementById("myForm").elements[1].value;
+            var z = document.getElementById("myForm").elements[2].value;
+
+            var ob = {
+                "na": x,
+                "ad": y,
+                "ci": z
+            }
+
+            ar.push(ob);
+            localStorage.setItem(key, JSON.stringify(ar));
+
+        }
+        var retr = localStorage.getItem(key);
+        var dat = JSON.parse(retr);
+        var tbl = document.getElementById("table");
+
+        var table = '';
+        for (var i = 0; i < dat.length; i++) {
+            var row = tbl.insertRow();
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+            var cell3 = row.insertCell();
+            cell1.innerHTML = "Raviiiii";
+            cell2.innerHTML = dat[i].ad;
+            cell3.innerHTML = dat[i].ci;
+            /* console.log(dat[i])
+                 //    document.write(dat[i].na);
+             table += '<tr>';
+             for (var c = 0; c < 3; c++) {
+                 table += '<td>' + dat[i].na + '</td>';
+             }
+             table += '</tr>';*/
+            i
+
+
+        }
+        document.write('<table>' + table + '</table>');
+        document.write(dat.length);
+    </script>
+</body>
+
+</html>

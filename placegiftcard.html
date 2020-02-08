@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>Fitness Appointment</title>
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="fitness.js"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <style>
+        body {
+            margin: 0;
+        }
+        
+        ​
+        /* Style the header */
+        
+        #header {
+            background-color: rgb(109, 131, 173);
+            padding: 20px;
+            text-align: center;
+        }
+        /* style the image*/
+        
+        .rounded-circle {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 20%;
+            opacity: 0.5
+        }
+        /* Create three unequal columns that floats next to each other */
+        
+        .column {
+            float: left;
+            padding: 10px;
+        }
+        /* Left and right column */
+        
+        .column.side {
+            width: 25%;
+            padding-left: 4%;
+        }
+        /* Middle column */
+        
+        .column.middle {
+            width: 75%;
+        }
+        /* Clear floats after the columns */
+        
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        
+        .phone {
+            margin-left: -2px;
+            margin-right: -2px;
+            width: 2%;
+        }
+        
+        #pincode {
+            margin: 10px;
+        }
+    </style>
+    <script type="text/javascript">
+    function validate()
+    {
+        if(!isNaN(myform.fname.value))
+        {
+            alert("please input alphabets only");
+            return false;
+        }
+        if(!isNaN(myform.lname.value))
+        {
+            alert("please input alphabets only");
+            return false;
+        }
+        if(myform.age.value<17 || myform.age.value>60)
+        {
+            alert("age should between 18 and 60");
+            return false;
+        }
+
+        var filter = /^([a-zA-Z0-9_\.\-])+\@(([a-zA-Z0-9\-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+       
+        if (!filter.test(myform.email.value)) {
+                alert('Please provide a valid email address');
+                return (false);
+        }
+     
+    }
+console.log("hello");
+    </script>
+
+
+</head>
+
+<body>
+
+    <div class="container-fluid" id="header">
+        <img src="download.jpg" class="rounded-circle" alt="error">
+    </div>
+
+
+    <nav class="navbar navbar-expand-lg bg-light navbar-light">
+        <a class="navbar-brand">Alchemy Gym</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="C:\Users\Alchemy\Downloads\project2-20200208T063702Z-001\project2\index\landing.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" >Place Appointment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">View Appointment</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="C:\Users\Alchemy\Downloads\project2-20200208T063702Z-001\project2\contact\contact.html">Contact Us</a>
+                </li>
+                
+                
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+
+    </div>
+    <div class="row">
+        <div class="column side">
+            <nav class="navbar  bg-light navbar-light">
+                <a class="navbar-brand">Alchemy Gym</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+                <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="C:\Users\Alchemy\Downloads\project2-20200208T063702Z-001\project2\index\landing.html">Home <span class="sr-only">(current)</span></a>
+                        </li>
+                        
+                       
+                        <li class="nav-item">
+                            <a class="nav-link" >Place Appointment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#">View Appointment</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="C:\Users\Alchemy\Downloads\project2-20200208T063702Z-001\project2\contact\contact.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+
+        </div>
+        <!--form---------->
+        <div class="column middle">
+            <form name="myform" >
+                <div class="form-group">
+                    <label for="fname">Name :</label>
+                    <input type="text" name="fname" required placeholder="First_Name" pattern="_[a-zA-Z]+"  >
+                    
+                  
+                    <input type="text" id="lname" required placeholder="Last_name" pattern="_[a-zA-Z]+">
+
+                    
+
+                </div>
+
+                <div class="form-group">
+                    <label for="age">Age :</label>
+                    <input type="number" id="age" name="age" required placeholder="age" pattern=>
+                    <label for="email">E-mail :</label>
+                    <input type="email" id="email" name="email" required placeholder="e-mail" >
+                    <label for="no">Phone-no :</label>
+
+                    <select id="myList">
+                        <option value = "null" disabled>pin</option>
+                        <option value = "+91">+91</option>
+                        <option value = "+01">+01</option>
+                        <option value = "+03">+03</option>
+                        <option value = "+44">+44</option>
+                      </select>
+                      <input type="tel" name="phone" pattern="[0-9]{3}-[0-9]{2}-[0-9]{3}" id="phone" required>
+
+
+                </div>
+
+                <div>
+                <fieldset>
+                    <legend>Address</legend>
+                    <label for="address">Street Address :</label>
+                    <input type="text" id="address" required placeholder="Address" class="form-control form-group">
+            
+
+                    <div class="form-inline">
+                    <label for="city">City :</label>
+                    <input type="text" id="city" required placeholder="City" class="form-control">
+                    <label for="address">Street Address :</label>
+                    <input type="text" id="address" required placeholder="Address" class="form-control">
+                    <label for="country">country :</label>
+                    <select id="country">
+                    <option value = "null" disabled>country</option>
+                    <option value = "India">India</option>
+                    <option value = "Russia">Russia</option>
+                    <option value = "USA">USA</option>
+                    <option value = "Australia">Australia</option>
+                    </select>
+                </div>
+                
+                <div class="form-inline" id="pincode">
+                    <label for="pincode">Pincode :</label>
+                    <input type="number" id="pincode" required placeholder="Pincode">
+                </div>
+                </fieldset>
+                <hr>
+            </div>
+
+                <div class="preference">
+                    <div>Trainer Preference :-</div>
+                    <div class="radio">
+                        <label><input type="radio" value="No-Preference" checked name="optradio">No-Preference</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" value="Male Trainer" name="optradio">Male Trainer</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" value="Female Trainer" name="optradio">Female Trainer</label>
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" value="Trainer-Name" name="optradio">Trainer-Name</label>
+                        <input type="text" id="tname">
+                    </div>
+                    <div class="radio">
+                        <label><input type="radio" value="other" name="optradio">Other</label>
+                        <input type="text" id="other">
+                    </div>
+
+                </div>
+                <div class="physio">
+                    Do you need physio therapist ?
+                    <div class="radio">
+                        <label><input type="radio" value="yes" checked name="pradio">Yes</label>
+                        <label><input type="radio" value="No"  name="pradio">No-Preference</label>
+                    </div>
+                </div>
+
+                <div class="appointment">
+                    <table>
+                        <tr>
+                            <th>Day</th>
+                            <th>7am-9am</th>
+                            <th>9am-11am</th>
+                            <th>11am-1pm</th>
+                            <th>1pm-3pm</th>
+                            <th>3pm-5pm</th>
+                        </tr>
+                        <tr class="Monday">
+                            <td>Monday</td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                        </tr>
+
+                        <tr class="Tuesday">
+                            <td>Tuesday</td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+
+                        </tr>
+                        <tr class="Wednesday">
+                            <td>Wednesday</td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+
+                        </tr>
+                        <tr class="Thrusday">
+                            <td>Thrusday</td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+
+                        </tr>
+                        <tr class="Friday">
+                            <td>Friday</td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+
+                        </tr>
+                        <tr class="Saturday">
+                            <td>Saturday</td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+
+                        </tr>
+                        <tr class="Sunday">
+                            <td>Sunday</td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+                            <td><input type="radio" name="aradio"></td>
+
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="package form-group">
+                    <div>
+                        <label><input type="radio" value="500 Rs"  name="packradio">One time Assesment Only</label> (INR 500)
+                    </div>
+                    <div>
+                        <label><input type="radio" value="4 Weekly Session"  name="packradio">4 Weekly Session</label> (INR 400/section)
+                    </div>
+                    <div>
+                        <label><input type="radio" value="12 Weekly Session"  name="packradio">12 Weekly Session</label> (INR 300/section)
+                    </div>
+                    <div>
+                        <label><input type="radio" value="other"  name="packradio">other</label> (INR 300/section)
+                    </div>
+                    <div>
+                        <label for="quote">Quote :</label>
+                        <input type="number" id="amount1" required placeholder="Rupees" style="width:70px">:
+                        <input type="number" id="amount2" required placeholder="paise" style="width:50px">
+                    </div>
+                    <input type="button" value="Submit" onclick="return validate()" >
+            </form>
+                   
+            </div>
+
+
+        </div>
+
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script>
+        const key = "loKey";
+        if (localStorage.getItem(key)) {
+            var ar = JSON.parse(localStorage.getItem(key));
+        } else {
+            console.log("........... NO localStorage  ..");
+            var ar = [];
+        }
+
+
+        function myFun() {
+            var x = document.getElementById("myForm").elements[0].value;
+            var y = document.getElementById("myForm").elements[1].value;
+            var z = document.getElementById("myForm").elements[2].value;
+
+            var ob = {
+                "na": x,
+                "ad": y,
+                "ci": z
+            }
+
+            ar.push(ob);
+            localStorage.setItem(key, JSON.stringify(ar));
+
+        }
+   
+    </script>
+
+    <script src=" https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js "></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js "></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js "></script>
+</body>
+
+</html>
